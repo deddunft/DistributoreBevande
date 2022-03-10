@@ -1,26 +1,26 @@
 public class Bevande {
-    private int barcode;
-    private int prezzo;
+    private String barcode;
+    private double prezzo;
 
-    public Bevande(int barcode, int prezzo) {
+    public Bevande(String barcode, double prezzo) {
         this.barcode = barcode;
         this.prezzo = prezzo;
     }
     public Bevande(){
-        this.barcode=0;
+        this.barcode="";
         this.prezzo=0;
 
     }
 
-    public int getBarcode() {
+    public String getBarcode() {
         return barcode;
     }
 
-    public void setBarcode(int barcode) {
+    public void setBarcode(String barcode) {
         this.barcode = barcode;
     }
 
-    public int getPrezzo() {
+    public double getPrezzo() {
         return prezzo;
     }
 

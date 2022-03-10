@@ -1,6 +1,6 @@
 public class Cappuccino extends Bevande{
 
-    public Cappuccino(){
+    public Cappuccino(String cappuccino, int i){
         super(3456,2);
     }
 
@@ -16,7 +16,7 @@ public class Cappuccino extends Bevande{
     }
 
     @Override
-    public int getPrezzo() {
+    public double getPrezzo() {
         return super.getPrezzo();
     }
 

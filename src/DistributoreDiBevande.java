@@ -2,10 +2,11 @@ import java.util.Arrays;
 
 public class DistributoreDiBevande {
 
-    private Bevande[] distrC;
-    private Bevande[] distrCp;
+
+    private Bevande[] distrCp = new Bevande[5];
     private int num;
     private double saldo;
+    private int count;
 
     public DistributoreDiBevande(int num){
         /*distrC = new Bevande[num];
@@ -15,18 +16,25 @@ public class DistributoreDiBevande {
             distrCp[i] = new Cappuccino();
 
         }*/
+        Bevande[] distrC = new Bevande[num];
+        for (int i = 0; i < num; i++) {
+            distrCp[i]=distrC[i];
+        }
 
         this.num= num;
     }
     public void caricaProdotto(Bevande bevande){
-        distrC = new Bevande[num];
-        for (int i = 0; i < num; i++) {
-            distrC[i]= bevande;
-        }
+
+        distrCp[count]= bevande;
+
+        count++;
 
     }
 
     public double getSaldo() {
+        return saldo;
+    }
+    public double saldoAttuale() {
         return saldo;
     }
 
@@ -34,27 +42,31 @@ public class DistributoreDiBevande {
         saldo = getSaldo()+soldi;
     }
 
-    public void scegliProdotto(int barc){
+    public boolean scegliProdotto(String barc){
         for (int i = 0; i <num ; i++) {
-
-
-            if (distrC[i].getBarcode()==barc){
-                saldo=getSaldo()-distrC[i].getPrezzo();
+            if (distrCp[i].getBarcode()==barc){
+                saldo=getSaldo()-distrCp[i].getPrezzo();
             }
-            if (distrC[i].getBarcode()==barc && distrC[i].getPrezzo()>getSaldo()){
+            if (distrCp[i].getBarcode()==barc && distrCp[i].getPrezzo()>getSaldo()){
                 System.out.println("Oh poveracciooo!");
             }
         }
+        return false;
+    }
+
+    public double getResto() {
+        return  getSaldo();
+
     }
 
 
     @Override
     public String toString() {
         return "DistributoreDiBevande{" +
-                "distrC=" + Arrays.toString(distrC) +
-                ", distrCp=" + Arrays.toString(distrCp) +
+                "distrCp=" + Arrays.toString(distrCp) +
                 ", num=" + num +
                 ", saldo=" + saldo +
+                ", count=" + count +
                 '}';
     }
 }

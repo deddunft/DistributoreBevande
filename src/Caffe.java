@@ -1,8 +1,8 @@
 public class Caffe extends Bevande{
 
 
-    public Caffe() {
-        super(24565,1);
+    public Caffe(String caffe, double v) {
+        super(24565,0.50);
     }
 
     @Override
@@ -16,7 +16,7 @@ public class Caffe extends Bevande{
     }
 
     @Override
-    public int getPrezzo() {
+    public double getPrezzo() {
         return super.getPrezzo();
     }
 
