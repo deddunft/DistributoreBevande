@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class DistributoreDiBevande {
 
 
-    private Bevande[] distrCp = new Bevande[5];
+    private Bevande[] distrCp = new Bevande[10];
     private int num;
     private double saldo;
     private int count;
@@ -24,7 +24,9 @@ public class DistributoreDiBevande {
         this.num= num;
     }
     public void caricaProdotto(Bevande bevande){
-
+        if (count==num){
+            count=0;
+        }
         distrCp[count]= bevande;
 
         count++;
@@ -42,16 +44,22 @@ public class DistributoreDiBevande {
         saldo = getSaldo()+soldi;
     }
 
-    public boolean scegliProdotto(String barc){
+    public Bevande scegliProdotto(String barc){
         for (int i = 0; i <num ; i++) {
             if (distrCp[i].getBarcode()==barc){
-                saldo=getSaldo()-distrCp[i].getPrezzo();
+
+                saldo= getSaldo()-distrCp[i].getPrezzo();
+                return distrCp[i];
+
             }
             if (distrCp[i].getBarcode()==barc && distrCp[i].getPrezzo()>getSaldo()){
                 System.out.println("Oh poveracciooo!");
+                return distrCp[i];
+
             }
         }
-        return false;
+        return null;
+
     }
 
     public double getResto() {
