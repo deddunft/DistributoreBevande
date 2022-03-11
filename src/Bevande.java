@@ -1,4 +1,4 @@
-public class Bevande {
+public abstract class Bevande {
     private String barcode;
     private double prezzo;
 

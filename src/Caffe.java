@@ -1,7 +1,7 @@
 public class Caffe extends Bevande{
 
 
-    public Caffe(String caffe, double v) {
+    public Caffe() {
         super("caffe",0.50);
     }
 

@@ -64,7 +64,6 @@ public class DistributoreDiBevande {
 
     public double getResto() {
         return  getSaldo();
-
     }
 
 

@@ -21,7 +21,7 @@ public class MIAN {
 
          */
 
-        Caffe caffe = new Caffe("caffe", 0.5);
+        /*Caffe caffe = new Caffe("caffe", 0.5);
         Cappuccino cappuccino = new Cappuccino("cappuccino", 1);
         DistributoreDiBevande distributoreDiBevande = new DistributoreDiBevande(10);
         distributoreDiBevande.caricaProdotto(caffe);
@@ -46,7 +46,15 @@ public class MIAN {
         System.out.println(distributoreDiBevande.scegliProdotto("caffe") != null);
         System.out.println(distributoreDiBevande.saldoAttuale() == 0);
         System.out.println(distributoreDiBevande.getResto()-0.10 < 1E-6);
+*/
 
+        DistributoreDiBevande b1 = new DistributoreDiBevande(5);
+        Caffe caffe = new Caffe();
+        b1.inserisciImporto(50);
+        b1.caricaProdotto(caffe);
+        System.out.println(b1.getSaldo());
+        b1.scegliProdotto("caffe");
+        System.out.println(b1.getSaldo());
 
     }
 }
